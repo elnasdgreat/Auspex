@@ -1,0 +1,124 @@
+body {
+    /*background-color: #ef5350;*/
+    background-color: #F45C43;
+    background-image: linear-gradient(#F45C43, #EB3349);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#symptoms-container {
+    padding: 12px;
+    margin: .5rem 0 1rem 0;
+    border-radius: 2px;
+}
+
+#symptoms-container > p {
+    margin: 0;
+}
+
+#symptoms > a {
+    text-decoration: underline;
+}
+
+.result-items {
+    border: none;
+}
+
+.disease-name {
+    color: #424242;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.symptoms-items a:hover {
+    text-decoration: underline;
+}
+
+
+.spinner-color-override {
+    border-color: #ff8a80;
+}
+
+.disease-name+p, .disease-name+p+p {
+    color: #212121;
+    margin-bottom: .2rem;
+}
+
+.no-result {
+    color: #212121;
+}
+
+
+.title-block {
+    padding: 4rem 0 2rem 0;
+    margin-bottom: 3rem;
+}
+.logo {
+    font-size: 4rem;
+}
+.title-heading {
+    margin-top: .5rem;
+    font-weight: 200;
+    font-size: 5.5rem;
+}
+
+.title-extra {
+    font-weight: 200;
+    font-size: 1.3rem;
+}
+
+.collapsible {
+    border: none;
+    box-shadow: none;
+}
+
+.collapsible-header {
+    transition: none;
+}
+
+.collapsible-header:hover {
+    background-color: #ff5252;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.collapsible > li:last-child > .collapsible-header {
+    border: none;
+}
+
+.collapsible-body {
+    background-color: white;
+    padding: .5rem 1rem;
+}
+.collapsible-body > .row {
+    margin-bottom: 0;
+}
+.collapsible-body > .row p {
+    margin: .35rem;
+}
+li.active > div.collapsible-header.active {
+    background: #ff5252;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid #ff5252;
+    border-bottom: 2px solid #ff5252;
+}
+
+[type="checkbox"]+label {
+    width: 100%;
+}
+
+li.col.m4 {
+    min-width: 210px !important;
+}
+
