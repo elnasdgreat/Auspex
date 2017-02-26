@@ -5,33 +5,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class App extends MY_Controller {
 
+
+
+
     public function __construct() {
         parent::__construct();
     }
 
+
+
+
     public function tests() {
-        $this->load->model('Data');
-
-        $symptoms_results = $this->Data->getSymptoms();
-        $diseases_results = $this->Data->getDiseases();
-
-        $symptomsDictionary = [];
-
-        foreach ($symptoms_results as $symptoms) {
-            $symptomsDictionary[] =
-            [
-                $symptoms->id,
-                $symptoms->name,
-                $symptoms->desc
-            ];
-        }
-
-        $diseases = [];
-
-        foreach ($diseases_results as $disease) {
-            $diseases[$disease->name] = unserialize($disease->symptoms);
-        }
     }
+
+
+
 
     public function index()
     {
@@ -58,6 +46,10 @@ class App extends MY_Controller {
         ];
     }
 
+
+
+
+
     public function predict() {
         $this->load->model('Data');
 
@@ -81,7 +73,7 @@ class App extends MY_Controller {
             $diseases[$disease->name] = [unserialize($disease->symptoms),$disease->desc];
         }
 
-        $userInput = $_POST['symptoms'];
+        $userInput = $this->input->post('symptoms');
 
         foreach ($userInput as $id) {
             $readableUserInput[] = $symptomsDictionary[array_search($id,array_column($symptomsDictionary, 0))][1];
@@ -131,6 +123,24 @@ class App extends MY_Controller {
         }
 
         echo json_encode($nearPredictions);
+    }
+
+
+
+
+    public function diseases() {
+        $this->dataSet = [
+            'title' => 'Diseases - Auspex'
+        ];
+    }
+
+
+
+
+    public function symptoms() {
+        $this->dataSet = [
+            'title' => 'Symptoms - Auspex'
+        ];
     }
 
 }

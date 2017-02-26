@@ -22,6 +22,13 @@
     </head>
     <body>
     <header>
+    <div class="center-align my-nav">
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/app/diseases">DISEASES</a></li>
+            <li><a href="/app/symptoms">SYMPTOMS</a></li>
+        </ul>
+    </div>
 
     </header>
 

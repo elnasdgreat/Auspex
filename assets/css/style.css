@@ -11,6 +11,42 @@ main {
     flex: 1 0 auto;
 }
 
+.my-nav ul {
+    display: inline-flex;
+    margin: 0;
+}
+
+.my-nav ul li a {
+    color: #fff;
+    font-size: .9em;
+    font-weight: 100;
+    padding: 13px;
+    display: block;
+}
+
+.my-nav ul li:hover a {
+    color: #c62828;
+}
+
+.heading {
+    font-weight: 100;
+}
+
+.search-input {
+    color: #fff;
+    font-size: 1.2rem !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+
+.search-input:focus:not([readonly]) {
+    box-shadow: 0 1px 0 0 #ffffff !important;
+}
+
+.pagination li a {
+    color: #fff;
+}
+
 #symptoms-container {
     padding: 12px;
     margin: .5rem 0 1rem 0;
