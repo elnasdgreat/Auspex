@@ -1,2 +1,2 @@
 # Auspex
-A very simple disease diagnosing app.
+A very simple disease predicting app.
