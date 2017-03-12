@@ -11,6 +11,15 @@ main {
     flex: 1 0 auto;
 }
 
+footer {
+    margin-top: 15px;
+    font-weight: 100;
+}
+
+.my-nav, footer {
+    background: rgba(0, 0, 0, 0.2);
+}
+
 .my-nav ul {
     display: inline-flex;
     margin: 0;
@@ -158,3 +167,37 @@ li.col.m4 {
     min-width: 210px !important;
 }
 
+
+#login-div {
+    background-color: #fff;
+    border-radius: 2px;
+    margin-top: 5%;
+
+    padding: 10px 0;
+}
+
+#login-form h3 {
+    font-weight: 100;
+}
+
+#login-form input {
+    border-color: #616161;
+    box-shadow: 0 1px 0 0 #616161;
+}
+
+#login-form input:focus {
+    border-bottom: 1px solid #ff5252;
+    box-shadow: 0 1px 0 0 #ff5252;
+}
+
+#login-form label {
+    color: #616161;
+}
+
+#login-form input:focus + label {
+    color: #ff5252 ;
+}
+
+#login-button {
+    margin-top: 25px;
+}

@@ -10,6 +10,7 @@ class App extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model("Data");
     }
 
 
@@ -23,7 +24,7 @@ class App extends MY_Controller {
 
     public function index()
     {
-        $this->load->model('Data');
+        // $this->load->model('Data');
         $category_results = $this->Data->getCategories();
         $symptoms_results = $this->Data->getSymptoms();
 
@@ -51,7 +52,7 @@ class App extends MY_Controller {
 
 
     public function predict() {
-        $this->load->model('Data');
+        // $this->load->model('Data');
 
         $symptoms_results = $this->Data->getSymptoms();
         $diseases_results = $this->Data->getDiseases();
@@ -142,6 +143,51 @@ class App extends MY_Controller {
             'title' => 'Symptoms - Auspex'
         ];
     }
+
+
+
+    public function login() {
+
+        $this->dataSet = [
+            'title' => 'Login - Auspex'
+        ];
+
+    }
+
+
+
+
+    public function auth() {
+        $username = $this->input->post('username', TRUE);
+        $password = $this->input->post('password', TRUE);
+
+        $result = $this->Data->findUser($username, $password);
+
+        if(count($result) > 0) {
+
+            echo json_encode([
+
+                "status" => "success",
+                "user" => $result
+
+            ]);
+
+        } else {
+
+            echo json_encode([
+
+                "status" => "error",
+                "fields" => [
+                    "msg" => "Invalid username or password."
+                ]
+
+            ]);
+
+        }
+
+    }
+
+
 
 }
 
